@@ -22,11 +22,12 @@ if uploaded_file:
     st.info("⏳ Processing file. Please wait...")
     file_name = uploaded_file.name
 
-url = f"{endpoint}/formrecognizer/documentModels/{model_id}:analyze?api-version=2023-07-31"
-headers = {
-    "Content-Type": "application/pdf",
-    "Ocp-Apim-Subscription-Key": key
-}
+    url = f"{endpoint}/formrecognizer/documentModels/{model_id}:analyze?api-version={api_version}"
+    headers = {
+        "Content-Type": "application/pdf",
+        "Ocp-Apim-Subscription-Key": key
+    }
+
     response = requests.post(url, headers=headers, data=uploaded_file.read())
 
     if response.status_code != 202:
