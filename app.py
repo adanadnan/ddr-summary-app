@@ -40,7 +40,7 @@ if uploaded_file:
             while True:
                 result_response = requests.get(result_url, headers={"Ocp-Apim-Subscription-Key": key})
                 result_json = result_response.json()
-                st.write(f"📡 Status: {result_json.get('status')}")
+               # st.write(f"📡 Status: {result_json.get('status')}")
                 if result_json["status"] == "succeeded":
                     break
                 elif result_json["status"] == "failed":
