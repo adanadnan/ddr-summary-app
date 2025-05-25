@@ -23,10 +23,10 @@ if uploaded_file:
     file_name = uploaded_file.name
 
 url = f"{endpoint}/formrecognizer/documentModels/{model_id}:analyze?api-version=2023-07-31"
-    headers = {
-        "Content-Type": "application/pdf",
-        "Ocp-Apim-Subscription-Key": key
-    }
+headers = {
+    "Content-Type": "application/pdf",
+    "Ocp-Apim-Subscription-Key": key
+}
 st.write("🔗 Azure API URL:", url)
 
     response = requests.post(url, headers=headers, data=uploaded_file.read())
