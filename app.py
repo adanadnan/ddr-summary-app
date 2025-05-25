@@ -27,6 +27,7 @@ url = f"{endpoint}/formrecognizer/documentModels/{model_id}:analyze?api-version=
         "Content-Type": "application/pdf",
         "Ocp-Apim-Subscription-Key": key
     }
+st.write("🔗 Azure API URL:", url)
 
     response = requests.post(url, headers=headers, data=uploaded_file.read())
 
