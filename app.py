@@ -51,8 +51,20 @@ if uploaded_file:
             st.error("❌ No fields found in the extracted result.")
             st.stop()
 
-        def safe(field):
-            return document[field].get("content", "Not found") if field in document else "Not found"
+def safe(field):
+    if field not in document:
+        return "Not found"
+    
+    field_data = document[field]
+    
+    return (
+        field_data.get("content")
+        or field_data.get("value")
+        or field_data.get("valueString")
+        or field_data.get("valueNumber")
+        or "Not found"
+    )
+
 
         well_name = safe("WellName")
         report_date = safe("ReportDate")
