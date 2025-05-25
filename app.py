@@ -27,8 +27,6 @@ headers = {
     "Content-Type": "application/pdf",
     "Ocp-Apim-Subscription-Key": key
 }
-st.write("🔗 Azure API URL:", url)
-
     response = requests.post(url, headers=headers, data=uploaded_file.read())
 
     if response.status_code != 202:
