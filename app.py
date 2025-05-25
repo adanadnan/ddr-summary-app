@@ -53,27 +53,28 @@ if uploaded_file:
             st.stop()
 
     def safe(field):
-        if field not in document:
-            return "Not found"
+    if field not in document:
+        return "Not found"
     
-        field_data = document[field]
+    field_data = document[field]
     
-        return (
-            field_data.get("content")
-            or field_data.get("value")
-            or field_data.get("valueString")
-            or field_data.get("valueNumber")
-            or "Not found"
-        )
+    return (
+        field_data.get("content")
+        or field_data.get("value")
+        or field_data.get("valueString")
+        or field_data.get("valueNumber")
+        or "Not found"
+    )
 
+# ✅ The rest goes here, not inside the function
+well_name = safe("WellName")
+report_date = safe("ReportDate")
+depth = safe("CurrentDepth")
+mud_weight = safe("MudWeight")
+drilling_hours = safe("DrillingHours")
+operation = safe("OperationType")
+remarks = safe("Remarks")
 
-        well_name = safe("WellName")
-        report_date = safe("ReportDate")
-        depth = safe("CurrentDepth")
-        mud_weight = safe("MudWeight")
-        drilling_hours = safe("DrillingHours")
-        operation = safe("OperationType")
-        remarks = safe("Remarks")
 
         def clean_remarks(text, max_chars=400):
             return text if len(text) <= max_chars else text[:max_chars].rsplit(".", 1)[0] + "..."
