@@ -5,8 +5,8 @@ import json
 from datetime import datetime
 
 # === CONFIGURATION ===
-endpoint = "https://<your-resource-name>.cognitiveservices.azure.com/"
-key = "<your-api-key>"
+endpoint = "https://DDRDocIntelligence.cognitiveservices.azure.com/"
+key = "56r8mRssdUvTOzEudaZaETdgQSv40JZaX6Wd94tLgIkXIEkFuRpVJQQJ99BEACYeBjFXJ3w3AAALACOGLF9u"
 model_id = "DDR_Sample"
 api_version = "2023-07-31"
 
