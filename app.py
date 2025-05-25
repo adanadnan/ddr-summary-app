@@ -51,7 +51,7 @@ if uploaded_file:
             st.error("❌ No fields found in the extracted result.")
             st.stop()
 
-def safe(field):
+    def safe(field):
     if field not in document:
         return "Not found"
     
