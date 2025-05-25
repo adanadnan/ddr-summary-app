@@ -52,18 +52,18 @@ if uploaded_file:
             st.stop()
 
     def safe(field):
-    if field not in document:
-        return "Not found"
+        if field not in document:
+            return "Not found"
     
-    field_data = document[field]
+        field_data = document[field]
     
-    return (
-        field_data.get("content")
-        or field_data.get("value")
-        or field_data.get("valueString")
-        or field_data.get("valueNumber")
-        or "Not found"
-    )
+        return (
+            field_data.get("content")
+            or field_data.get("value")
+            or field_data.get("valueString")
+            or field_data.get("valueNumber")
+            or "Not found"
+        )
 
 
         well_name = safe("WellName")
